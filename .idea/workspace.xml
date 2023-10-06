@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bacfa6b5-9681-45c3-a5f1-0c2d7b9c0b6c" name="Changes" comment="skeleton">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/pojo/Body.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/pojo/Diet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/pojo/User.java" afterDir="false" />
+    <list default="true" id="bacfa6b5-9681-45c3-a5f1-0c2d7b9c0b6c" name="Changes" comment="define the classes /Oct 5th">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/GymnomnomApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/GymnomnomApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/controller/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/controller/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/GymnomnomApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/GymnomnomApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/controller/HelloController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/controller/HelloController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +73,11 @@
     ]
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/pojo" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="GymnomnomApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="GymNomNom" />
@@ -87,7 +96,7 @@
       <option name="presentableId" value="Default" />
       <updated>1696301939311</updated>
       <workItem from="1696301940509" duration="3948000" />
-      <workItem from="1696551022648" duration="348000" />
+      <workItem from="1696551022648" duration="1020000" />
     </task>
     <task id="LOCAL-00001" summary="skeleton">
       <created>1696302142980</created>
@@ -110,7 +119,14 @@
       <option name="project" value="LOCAL" />
       <updated>1696551144476</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="define the classes /Oct 5th">
+      <created>1696551605796</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1696551605796</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,6 +145,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="skeleton" />
-    <option name="LAST_COMMIT_MESSAGE" value="skeleton" />
+    <MESSAGE value="define the classes /Oct 5th" />
+    <option name="LAST_COMMIT_MESSAGE" value="define the classes /Oct 5th" />
   </component>
 </project>
