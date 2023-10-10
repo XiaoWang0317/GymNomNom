@@ -11,6 +11,6 @@ public class User {
     private String name;
     private int id;
     private String password;
-    private int type;
+    private int fitness_type;
     int age;
 }
