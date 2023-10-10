@@ -2,6 +2,7 @@ package com.gymnomnom.gymnomnom.mapper;
 
 import com.gymnomnom.gymnomnom.pojo.User;
 import org.apache.ibatis.annotations.*;
+import org.springframework.stereotype.Service;
 
 @Mapper
 public interface AccountMapper {
@@ -18,5 +19,13 @@ public interface AccountMapper {
      */
     @Delete("delete from user_table where id = #{id}")
     void deleteById(Integer id);
+
+    /**
+     * Search user's name and password
+     * @param user
+     * @return
+     */
+    @Select("select * from user_table where name = #{name} and password = #{password}")
+    User getByNameAndPw(User user);
 }
 

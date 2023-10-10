@@ -8,4 +8,6 @@ public interface AccountService {
     int add(User user);
 
     void delete(Integer id);
+
+    User login(User user);
 }

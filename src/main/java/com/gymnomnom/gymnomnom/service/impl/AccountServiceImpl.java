@@ -26,4 +26,14 @@ public class AccountServiceImpl implements AccountService {
     public void delete(Integer id) {
         accountMapper.deleteById(id);
     }
+
+    /**
+     * Log in by searching the user's name and password
+     * @param user
+     * @return
+     */
+    @Override
+    public User login(User user) {
+        return accountMapper.getByNameAndPw(user);
+    }
 }
