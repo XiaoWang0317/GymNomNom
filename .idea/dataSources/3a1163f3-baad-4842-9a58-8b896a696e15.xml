@@ -1139,13 +1139,21 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="321" parent="299" name="PRIMARY">
+    <index id="321" parent="299" name="password">
+      <ColNames>password</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="322" parent="299" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <key id="322" parent="299" name="id">
+    <key id="323" parent="299" name="id">
       <UnderlyingIndexName>id</UnderlyingIndexName>
+    </key>
+    <key id="324" parent="299" name="password">
+      <UnderlyingIndexName>password</UnderlyingIndexName>
     </key>
   </database-model>
 </dataSource>

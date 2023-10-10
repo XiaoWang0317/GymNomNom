@@ -6,4 +6,6 @@ import org.springframework.stereotype.Service;
 
 public interface AccountService {
     int add(User user);
+
+    void delete(Integer id);
 }

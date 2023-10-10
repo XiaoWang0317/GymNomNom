@@ -2,6 +2,7 @@ package com.gymnomnom.gymnomnom.service.impl;
 
 import com.gymnomnom.gymnomnom.mapper.AccountMapper;
 import com.gymnomnom.gymnomnom.pojo.User;
+import com.gymnomnom.gymnomnom.pojo.generalException;
 import com.gymnomnom.gymnomnom.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,9 +16,14 @@ public class AccountServiceImpl implements AccountService {
     public int add(User user) {
         int age = user.getAge();
         if (age <= 0 || age >= 120) {
-            return 0;
+            throw new generalException("Unreasonable age number");
         }
         accountMapper.add(user);
         return 1;
+    }
+
+    @Override
+    public void delete(Integer id) {
+        accountMapper.deleteById(id);
     }
 }
