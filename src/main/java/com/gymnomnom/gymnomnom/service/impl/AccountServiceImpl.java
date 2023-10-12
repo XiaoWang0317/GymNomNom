@@ -13,13 +13,12 @@ public class AccountServiceImpl implements AccountService {
     @Autowired
     private AccountMapper accountMapper;
     @Override
-    public int add(User user) {
+    public void add(User user) {
         int age = user.getAge();
         if (age <= 0 || age >= 120) {
             throw new generalException("Unreasonable age number");
         }
         accountMapper.add(user);
-        return 1;
     }
 
     @Override
