@@ -20,15 +20,14 @@ public class AccountController {
 
     /**
      * Sign up a account
-     * @param user
+     * @param user a JSON required (all information of the user)
      * @return Result
      */
     @PostMapping("/signup")
     public Result signup(@RequestBody User user) {
         log.info("Add a user to database");
-        int return_type = 0;
         try {
-            return_type = accountService.add(user);
+            accountService.add(user);
         } catch (Exception e) {
             return Result.error(e.getMessage());
         }
@@ -37,7 +36,7 @@ public class AccountController {
 
     /**
      * Delete an account
-     * @param id
+     * @param id: user's id (in the req path)
      * @return Result
      */
     @DeleteMapping("/{id}/delete")
@@ -47,6 +46,11 @@ public class AccountController {
         return Result.success();
     }
 
+    /**
+     * Log in to the account
+     * @param user a JSON required (name & password)
+     * @return a map contains the user's id and the JWT
+     */
     @PostMapping("/login")
     public Result login(@RequestBody User user) {
         log.info("Log in: {}", user);
@@ -57,9 +61,12 @@ public class AccountController {
             claims.put("name", u.getName());
             claims.put("password", u.getPassword());
             String jwt = JwtUtils.generateJwt(claims);
-            return Result.success(jwt);
+            Map<String, Object> map = new HashMap<>();
+            map.put("ID", u.getId());
+            map.put("JWT", jwt);
+            return Result.success(map);
         }
         //fail
-        return Result.error("Invalid name or password");
+        return Result.error("Cannot find the name or password");
     }
 }
