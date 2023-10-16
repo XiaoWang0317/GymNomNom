@@ -5,11 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bacfa6b5-9681-45c3-a5f1-0c2d7b9c0b6c" name="Changes" comment="Sprint1-account">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/filter/LoginFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/controller/BodyController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/mapper/BodyMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/service/BodyService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/service/impl/BodyServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/utils/BMICalculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3a1163f3-baad-4842-9a58-8b896a696e15.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3a1163f3-baad-4842-9a58-8b896a696e15.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/mapper/AccountMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/mapper/AccountMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/pojo/Body.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/pojo/Body.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/service/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/service/AccountService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/service/impl/AccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/service/impl/AccountServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/controller/AccountController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/controller/AccountController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/mapper/AccountMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/mapper/AccountMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/service/AccountService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/service/AccountService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/service/impl/AccountServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/service/impl/AccountServiceImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,7 +149,10 @@
       <workItem from="1696899394791" duration="5371000" />
       <workItem from="1696966878357" duration="6015000" />
       <workItem from="1697132154071" duration="1335000" />
-      <workItem from="1697145861045" duration="2333000" />
+      <workItem from="1697145861045" duration="2375000" />
+      <workItem from="1697325399587" duration="434000" />
+      <workItem from="1697330825712" duration="4147000" />
+      <workItem from="1697476211206" duration="4468000" />
     </task>
     <task id="LOCAL-00001" summary="skeleton">
       <created>1696302142980</created>
@@ -225,7 +238,14 @@
       <option name="project" value="LOCAL" />
       <updated>1697133043922</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Sprint1-account">
+      <created>1697148236447</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1697148236447</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

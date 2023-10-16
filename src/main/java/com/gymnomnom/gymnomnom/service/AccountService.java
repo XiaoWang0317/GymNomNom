@@ -2,7 +2,6 @@ package com.gymnomnom.gymnomnom.service;
 
 
 import com.gymnomnom.gymnomnom.pojo.User;
-import org.springframework.stereotype.Service;
 
 public interface AccountService {
     void add(User user);
@@ -10,4 +9,6 @@ public interface AccountService {
     void delete(Integer id);
 
     User login(User user);
+
+    Integer getAgeById(Integer id);
 }

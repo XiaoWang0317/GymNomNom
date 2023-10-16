@@ -22,5 +22,11 @@ public interface AccountMapper {
      */
     @Select("select * from user_table where name = #{name} and password = #{password}")
     User getByNameAndPw(User user);
+
+    /**
+     * Get user's age by id
+     */
+    @Select("select age from user_table where id = #{id}")
+    Integer getAgeById(Integer id);
 }
 

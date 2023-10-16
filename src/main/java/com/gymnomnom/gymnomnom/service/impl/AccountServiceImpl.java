@@ -12,6 +12,11 @@ public class AccountServiceImpl implements AccountService {
 
     @Autowired
     private AccountMapper accountMapper;
+
+    /**
+     * Add a user to the database
+     * @param user (all info)
+     */
     @Override
     public void add(User user) {
         int age = user.getAge();
@@ -28,11 +33,16 @@ public class AccountServiceImpl implements AccountService {
 
     /**
      * Log in by searching the user's name and password
-     * @param user
-     * @return
+     * @param user (name and password)
+     * @return the user in the database
      */
     @Override
     public User login(User user) {
         return accountMapper.getByNameAndPw(user);
+    }
+
+    @Override
+    public Integer getAgeById(Integer id) {
+        return accountMapper.getAgeById(id);
     }
 }
