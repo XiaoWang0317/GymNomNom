@@ -5,10 +5,13 @@ import com.gymnomnom.gymnomnom.pojo.Body;
 import com.gymnomnom.gymnomnom.pojo.Result;
 import com.gymnomnom.gymnomnom.service.AccountService;
 import com.gymnomnom.gymnomnom.service.BodyService;
+import com.gymnomnom.gymnomnom.utils.JwtUtils;
+import io.jsonwebtoken.Claims;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -21,6 +24,8 @@ public class BodyController {
     private BodyService bodyService;
     @Autowired
     private AccountService accountService;
+    @Autowired
+    private HttpServletRequest request;
 
     /**
      * Input the body data of today
@@ -31,9 +36,16 @@ public class BodyController {
     @PostMapping("/{id}/inputbody")
     @Track
     public Result inputBody(@PathVariable Integer id, @RequestBody Body body) {
-        log.info("Input body data of user: {}", id);
+        log.info("Input body data for user: {}", id);
         body.setId(id);
-        body.setAge(accountService.getAgeById(id));
+
+        String token = request.getHeader("token");
+        Claims claims = JwtUtils.parseJWT(token);
+
+        //id
+        Integer test_id = (Integer) claims.get("id");
+        log.info("ID: {}", test_id);
+
         try {
             bodyService.inputBody(body);
         } catch (Exception e) {
