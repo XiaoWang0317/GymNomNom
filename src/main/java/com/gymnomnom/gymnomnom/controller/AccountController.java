@@ -1,5 +1,8 @@
 package com.gymnomnom.gymnomnom.controller;
 
+import com.gymnomnom.gymnomnom.anno.Track;
+import com.gymnomnom.gymnomnom.mapper.LoginMapper;
+import com.gymnomnom.gymnomnom.pojo.LoginLog;
 import com.gymnomnom.gymnomnom.pojo.Result;
 import com.gymnomnom.gymnomnom.pojo.User;
 import com.gymnomnom.gymnomnom.service.AccountService;
@@ -8,6 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -17,6 +21,9 @@ public class AccountController {
 
     @Autowired
     private AccountService accountService;
+
+    @Autowired
+    private LoginMapper loginMapper;
 
     /**
      * Sign up a account
@@ -40,6 +47,7 @@ public class AccountController {
      * @return Result
      */
     @DeleteMapping("/{id}/delete")
+    @Track
     public Result delete(@PathVariable Integer id) {
         log.info("Delete an account based on the id: {}", id);
         accountService.delete(id);
@@ -60,10 +68,13 @@ public class AccountController {
             Map<String, Object> claims = new HashMap<>();
             claims.put("name", u.getName());
             claims.put("password", u.getPassword());
+            claims.put("id", u.getId());
             String jwt = JwtUtils.generateJwt(claims);
             Map<String, Object> map = new HashMap<>();
             map.put("ID", u.getId());
             map.put("JWT", jwt);
+            LoginLog login = new LoginLog(LocalDateTime.now(), u.getName(), u.getPassword(), u.getId());
+            loginMapper.insert(login);
             return Result.success(map);
         }
         //fail

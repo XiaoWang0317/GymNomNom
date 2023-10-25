@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 
 @Service
 public class BodyServiceImpl implements BodyService {
@@ -33,5 +34,32 @@ public class BodyServiceImpl implements BodyService {
         }
         body.setBmi(BMICalculator.bmiCalculator(body));
         bodyMapper.inputBody(body);
+    }
+
+    /**
+     * Get heights
+     * @return arraylist
+     */
+    @Override
+    public ArrayList<Double> getHeightArray(Integer id) {
+        return bodyMapper.getHeights(id);
+    }
+
+    /**
+     * Get weights
+     * @return arraylist
+     */
+    @Override
+    public ArrayList<Double> getWeightArray(Integer id) {
+        return bodyMapper.getWeights(id);
+    }
+
+    /**
+     * Get BMI
+     * @return arraylist
+     */
+    @Override
+    public ArrayList<Double> getBmiArray(Integer id) {
+        return bodyMapper.getBmi(id);
     }
 }
