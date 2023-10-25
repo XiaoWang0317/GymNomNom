@@ -5,25 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bacfa6b5-9681-45c3-a5f1-0c2d7b9c0b6c" name="Changes" comment="Sprint2-body">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/anno/Track.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/aop/LogAspect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/mapper/LoginMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/mapper/TrackMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/pojo/LoginLog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/pojo/OperateLog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3a1163f3-baad-4842-9a58-8b896a696e15.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3a1163f3-baad-4842-9a58-8b896a696e15.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/controller/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/controller/AccountController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/controller/BodyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/controller/BodyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/mapper/BodyMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/mapper/BodyMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/service/BodyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/service/BodyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/service/impl/BodyServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/service/impl/BodyServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/utils/BMICalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/utils/BMICalculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/controller/AccountController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/controller/AccountController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/pojo/Body.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/pojo/Body.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/service/impl/AccountServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/service/impl/AccountServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,34 +55,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/mogamimorimodo/Desktop/GymNomNom/src/main/java/com/gymnomnom/gymnomnom/pojo&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;50fe1b9315ee23d567fb25276bb6e45e&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/mogamimorimodo/Desktop/GymNomNom/src/main/java/com/gymnomnom/gymnomnom/pojo",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "spring.configuration.checksum": "50fe1b9315ee23d567fb25276bb6e45e",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/pojo" />
@@ -159,7 +142,7 @@
       <workItem from="1697330825712" duration="4147000" />
       <workItem from="1697476211206" duration="4922000" />
       <workItem from="1697767315858" duration="809000" />
-      <workItem from="1698175410396" duration="8276000" />
+      <workItem from="1698175410396" duration="8598000" />
     </task>
     <task id="LOCAL-00001" summary="skeleton">
       <created>1696302142980</created>
@@ -259,7 +242,14 @@
       <option name="project" value="LOCAL" />
       <updated>1697482888315</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Sprint2-body">
+      <created>1698192527476</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1698192527476</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
