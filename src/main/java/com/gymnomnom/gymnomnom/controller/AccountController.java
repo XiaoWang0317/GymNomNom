@@ -7,10 +7,12 @@ import com.gymnomnom.gymnomnom.pojo.Result;
 import com.gymnomnom.gymnomnom.pojo.User;
 import com.gymnomnom.gymnomnom.service.AccountService;
 import com.gymnomnom.gymnomnom.utils.JwtUtils;
+import io.jsonwebtoken.Claims;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
@@ -21,7 +23,8 @@ public class AccountController {
 
     @Autowired
     private AccountService accountService;
-
+    @Autowired
+    private HttpServletRequest request;
     @Autowired
     private LoginMapper loginMapper;
 
@@ -43,13 +46,17 @@ public class AccountController {
 
     /**
      * Delete an account
-     * @param id: user's id (in the req path)
      * @return Result
      */
-    @DeleteMapping("/{id}/delete")
+    @DeleteMapping("/delete")
     @Track
-    public Result delete(@PathVariable Integer id) {
+    public Result delete() {
+        //id
+        String token = request.getHeader("token");
+        Claims claims = JwtUtils.parseJWT(token);
+        Integer id = (Integer) claims.get("id");
         log.info("Delete an account based on the id: {}", id);
+
         accountService.delete(id);
         return Result.success();
     }

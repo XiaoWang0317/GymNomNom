@@ -3,7 +3,6 @@ package com.gymnomnom.gymnomnom.controller;
 import com.gymnomnom.gymnomnom.anno.Track;
 import com.gymnomnom.gymnomnom.pojo.Body;
 import com.gymnomnom.gymnomnom.pojo.Result;
-import com.gymnomnom.gymnomnom.service.AccountService;
 import com.gymnomnom.gymnomnom.service.BodyService;
 import com.gymnomnom.gymnomnom.utils.JwtUtils;
 import io.jsonwebtoken.Claims;
@@ -23,28 +22,22 @@ public class BodyController {
     @Autowired
     private BodyService bodyService;
     @Autowired
-    private AccountService accountService;
-    @Autowired
     private HttpServletRequest request;
 
     /**
      * Input the body data of today
-     * @param id of the user, from url
      * @param body JSON of the body data
      * @return BMI
      */
-    @PostMapping("/{id}/inputbody")
+    @PostMapping("/inputbody")
     @Track
-    public Result inputBody(@PathVariable Integer id, @RequestBody Body body) {
-        log.info("Input body data for user: {}", id);
-        body.setId(id);
-
+    public Result inputBody(@RequestBody Body body) {
+        //id
         String token = request.getHeader("token");
         Claims claims = JwtUtils.parseJWT(token);
-
-        //id
-        Integer test_id = (Integer) claims.get("id");
-        log.info("ID: {}", test_id);
+        Integer id = (Integer) claims.get("id");
+        log.info("Input body data for user: {}", id);
+        body.setId(id);
 
         try {
             bodyService.inputBody(body);
@@ -57,13 +50,17 @@ public class BodyController {
 
     /**
      * Get the history body data
-     * @param id in the url
      * @return a map with heights, weights and BMI arraylists
      */
-    @GetMapping("/{id}/history")
+    @GetMapping("/history")
     @Track
-    public Result getBodyHistory(@PathVariable Integer id) {
-        log.info("Get the body history of ");
+    public Result getBodyHistory() {
+        //id
+        String token = request.getHeader("token");
+        Claims claims = JwtUtils.parseJWT(token);
+        Integer id = (Integer) claims.get("id");
+        log.info("Get body history data for user: {}", id);
+
         Map<String, ArrayList<Double>> bodyMap = new HashMap<>();
         bodyMap.put("heights", bodyService.getHeightArray(id));
         bodyMap.put("weights", bodyService.getWeightArray(id));

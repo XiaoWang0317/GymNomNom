@@ -1,5 +1,6 @@
 package com.gymnomnom.gymnomnom.service.impl;
 
+import com.gymnomnom.gymnomnom.mapper.AccountMapper;
 import com.gymnomnom.gymnomnom.mapper.BodyMapper;
 import com.gymnomnom.gymnomnom.pojo.Body;
 import com.gymnomnom.gymnomnom.pojo.generalException;
@@ -17,6 +18,9 @@ public class BodyServiceImpl implements BodyService {
     @Autowired
     private BodyMapper bodyMapper;
 
+    @Autowired
+    private AccountMapper accountMapper;
+
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
     /**
@@ -33,6 +37,7 @@ public class BodyServiceImpl implements BodyService {
             throw new generalException("Please valid height");
         }
         body.setBmi(BMICalculator.bmiCalculator(body));
+        body.setAge(accountMapper.getAgeById(body.getId()));
         bodyMapper.inputBody(body);
     }
 

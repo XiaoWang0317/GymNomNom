@@ -7,8 +7,9 @@
     <list default="true" id="bacfa6b5-9681-45c3-a5f1-0c2d7b9c0b6c" name="Changes" comment="Sprint2-body">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/controller/BodyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/controller/BodyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/aop/LogAspect.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/aop/LogAspect.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/service/impl/BodyServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/service/impl/BodyServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/controller/BodyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/controller/BodyController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/service/impl/BodyServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/service/impl/BodyServiceImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +147,9 @@
       <workItem from="1697476211206" duration="4922000" />
       <workItem from="1697767315858" duration="809000" />
       <workItem from="1698175410396" duration="8725000" />
-      <workItem from="1698205172938" duration="689000" />
+      <workItem from="1698205172938" duration="761000" />
+      <workItem from="1698261184630" duration="2122000" />
+      <workItem from="1698280205933" duration="336000" />
     </task>
     <task id="LOCAL-00001" summary="skeleton">
       <created>1696302142980</created>
@@ -260,7 +263,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698192619708</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Sprint2-body">
+      <created>1698205930945</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1698205930945</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
