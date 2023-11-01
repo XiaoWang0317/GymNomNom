@@ -11,7 +11,7 @@ public interface BodyMapper {
     /**
      * Put user's body into the database
      */
-    @Insert("insert into body_table (id, date, height, weight, bmi, age) values (#{id}, #{date}, #{height}, #{weight}, #{bmi}, #{age})")
+    @Insert("insert into body_table (id, date, height, weight, bmi, age, gender) values (#{id}, #{date}, #{height}, #{weight}, #{bmi}, #{age}, #{gender})")
     void inputBody(Body body);
 
 

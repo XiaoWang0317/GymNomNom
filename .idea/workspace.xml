@@ -5,10 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bacfa6b5-9681-45c3-a5f1-0c2d7b9c0b6c" name="Changes" comment="Sprint2-body">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3a1163f3-baad-4842-9a58-8b896a696e15.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3a1163f3-baad-4842-9a58-8b896a696e15.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/controller/BodyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/controller/BodyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/mapper/AccountMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/mapper/AccountMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/mapper/BodyMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/mapper/BodyMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/pojo/Body.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/pojo/Body.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/pojo/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/pojo/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/service/impl/BodyServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/service/impl/BodyServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/controller/AccountController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/controller/AccountController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/controller/BodyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/controller/BodyController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/mapper/AccountMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/mapper/AccountMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/mapper/BodyMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/mapper/BodyMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/pojo/Body.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/pojo/Body.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/pojo/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/pojo/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/service/impl/BodyServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/service/impl/BodyServiceImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -149,7 +158,9 @@
       <workItem from="1698175410396" duration="8725000" />
       <workItem from="1698205172938" duration="761000" />
       <workItem from="1698261184630" duration="2122000" />
-      <workItem from="1698280205933" duration="336000" />
+      <workItem from="1698280205933" duration="539000" />
+      <workItem from="1698330570170" duration="434000" />
+      <workItem from="1698871134651" duration="556000" />
     </task>
     <task id="LOCAL-00001" summary="skeleton">
       <created>1696302142980</created>
@@ -270,7 +281,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698205930945</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Sprint2-body">
+      <created>1698280706772</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1698280706772</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

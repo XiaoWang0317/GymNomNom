@@ -14,7 +14,7 @@ public class Body {
     private double height;
     private double weight;
     private double bmi;
-
+    private int gender;
     private String date;
 
 }

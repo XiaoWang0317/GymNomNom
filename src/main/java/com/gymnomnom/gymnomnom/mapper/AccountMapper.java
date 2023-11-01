@@ -8,7 +8,7 @@ public interface AccountMapper {
     /**
      * Create an account and add it to the user_table
      */
-    @Insert("insert into user_table (name, password, fitness_type, age) VALUE (#{name}, #{password}, #{fitness_type}, #{age})")
+    @Insert("insert into user_table (name, password, fitness_type, age, gender) VALUE (#{name}, #{password}, #{fitness_type}, #{age}, #{gender})")
     void add(User user);
 
     /**
@@ -28,5 +28,11 @@ public interface AccountMapper {
      */
     @Select("select age from user_table where id = #{id}")
     Integer getAgeById(Integer id);
+
+    /**
+     * Get user's gender by id
+     */
+    @Select("select gender from user_table where id = #{id}")
+    Integer getGenderById(Integer id);
 }
 

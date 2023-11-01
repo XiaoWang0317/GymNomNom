@@ -38,6 +38,7 @@ public class BodyServiceImpl implements BodyService {
         }
         body.setBmi(BMICalculator.bmiCalculator(body));
         body.setAge(accountMapper.getAgeById(body.getId()));
+        body.setGender(accountMapper.getGenderById(body.getId()));
         bodyMapper.inputBody(body);
     }
 
