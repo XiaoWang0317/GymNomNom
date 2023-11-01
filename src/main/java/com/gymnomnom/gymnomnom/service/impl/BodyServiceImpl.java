@@ -31,10 +31,10 @@ public class BodyServiceImpl implements BodyService {
     public void inputBody(Body body) {
         body.setDate(LocalDateTime.now().format(formatter));
         if (body.getWeight() <= 0 || body.getWeight() >= 1000) {
-            throw new generalException("Please valid weight");
+            throw new generalException("Please input valid weight");
         }
         if (body.getHeight() <= 0 || body.getHeight() >= 100) {
-            throw new generalException("Please valid height");
+            throw new generalException("Please input valid height");
         }
         body.setBmi(BMICalculator.bmiCalculator(body));
         body.setAge(accountMapper.getAgeById(body.getId()));
