@@ -3,6 +3,9 @@ package com.gymnomnom.gymnomnom.mapper;
 import com.gymnomnom.gymnomnom.pojo.Diet;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
+
+import java.util.List;
 
 @Mapper
 public interface NutritionMapper {
@@ -13,4 +16,7 @@ public interface NutritionMapper {
     @Insert("insert into diet_table (id, date, age, fat, vc, va, calories, protein, carbs, gender) values " +
             "(#{id}, #{date}, #{age}, #{fat}, #{vc}, #{va}, #{calories}, #{protein}, #{carbs}, #{gender})")
     void inputDiet(Diet diet);
+
+    @Select("select * from diet_table where id = #{id}")
+    List<Diet> getNutHistory(Integer id);
 }
