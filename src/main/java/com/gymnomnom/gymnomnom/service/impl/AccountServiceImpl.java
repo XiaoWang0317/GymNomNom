@@ -1,6 +1,8 @@
 package com.gymnomnom.gymnomnom.service.impl;
 
 import com.gymnomnom.gymnomnom.mapper.AccountMapper;
+import com.gymnomnom.gymnomnom.mapper.BodyMapper;
+import com.gymnomnom.gymnomnom.mapper.NutritionMapper;
 import com.gymnomnom.gymnomnom.pojo.User;
 import com.gymnomnom.gymnomnom.pojo.generalException;
 import com.gymnomnom.gymnomnom.service.AccountService;
@@ -12,6 +14,12 @@ public class AccountServiceImpl implements AccountService {
 
     @Autowired
     private AccountMapper accountMapper;
+
+    @Autowired
+    private BodyMapper bodyMapper;
+
+    @Autowired
+    private NutritionMapper nutritionMapper;
 
     /**
      * Add a user to the database
@@ -29,6 +37,8 @@ public class AccountServiceImpl implements AccountService {
     @Override
     public void delete(Integer id) {
         accountMapper.deleteById(id);
+        bodyMapper.deleteAccount(id);
+        nutritionMapper.deleteAccount(id);
     }
 
     /**

@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bacfa6b5-9681-45c3-a5f1-0c2d7b9c0b6c" name="Changes" comment="Sprint 3 - Nutrition">
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/controller/NutritionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/controller/NutritionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/mapper/NutritionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/mapper/NutritionMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/service/NutritionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/service/NutritionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/service/impl/NutritionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/service/impl/NutritionServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/controller/NutritionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/controller/NutritionController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/mapper/NutritionMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/mapper/NutritionMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/service/NutritionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/service/NutritionService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/service/impl/NutritionServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/service/impl/NutritionServiceImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +158,8 @@
       <workItem from="1698280205933" duration="539000" />
       <workItem from="1698330570170" duration="434000" />
       <workItem from="1698871134651" duration="4200000" />
-      <workItem from="1698949796062" duration="978000" />
+      <workItem from="1698949796062" duration="1785000" />
+      <workItem from="1699300724825" duration="329000" />
     </task>
     <task id="LOCAL-00001" summary="skeleton">
       <created>1696302142980</created>
@@ -308,7 +308,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698881776536</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Sprint 3 - Nutrition">
+      <created>1698950784116</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1698950784116</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

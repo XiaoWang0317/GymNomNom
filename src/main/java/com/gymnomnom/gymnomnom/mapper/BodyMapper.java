@@ -24,4 +24,7 @@ public interface BodyMapper {
 
     @Select("select bmi from body_table where id = #{id}")
     ArrayList<Double> getBmi(Integer id);
+
+    @Delete("delete from body_table where id = #{id}")
+    void deleteAccount(Integer id);
 }

@@ -1,6 +1,7 @@
 package com.gymnomnom.gymnomnom.mapper;
 
 import com.gymnomnom.gymnomnom.pojo.Diet;
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -19,4 +20,7 @@ public interface NutritionMapper {
 
     @Select("select * from diet_table where id = #{id}")
     List<Diet> getNutHistory(Integer id);
+
+    @Delete("delete from diet_table where id = #{id}")
+    void deleteAccount(Integer id);
 }
