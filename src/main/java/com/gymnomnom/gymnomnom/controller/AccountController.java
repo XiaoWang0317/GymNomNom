@@ -87,4 +87,11 @@ public class AccountController {
         //fail
         return Result.error("Cannot find the name or password");
     }
+
+    @GetMapping("/about")
+    public String aboutPage() {
+        // Return the name of the Thymeleaf template or view for the "about" page
+        return "about"; // Assuming there is a Thymeleaf template named "about.html"
+    }
+
 }

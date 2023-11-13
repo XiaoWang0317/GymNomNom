@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Login Page</title>
+    <link rel="stylesheet" th:href="@{/styles.css}"/>
+</head>
+<body>
+<h2>Login Page</h2>
+<form id="loginForm" onsubmit="submitLoginForm(); return false;">
+    <!-- Add a hidden input for CSRF protection -->
+    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required/>
+    <br/>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required/>
+    <br/>
+    <button type="submit">Login</button>
+</form>
+
+<div id="responseContainer"></div>
+
+<script>
+    function submitLoginForm() {
+        var name = document.getElementById("name").value;
+        var password = document.getElementById("password").value;
+
+        var formData = {
+            "name": name,
+            "password": password,
+            "redirect": "/about"  // Specify the desired redirect URL
+        };
+
+        // Use fetch to send a POST request with JSON payload
+        fetch('/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        }).then(response => {
+            // Check if the response status is OK
+            if (response.ok) {
+                // Parse the JSON response
+                return response.json();
+            } else {
+                throw new Error('Failed to login');
+            }
+        }).then(data => {
+            // Check if the response contains a "redirect" field
+            if (data.redirect) {
+                // Redirect to the specified URL
+                window.location.href = data.redirect;
+            } else {
+                // Display the response on the page
+                var message = data.msg;
+                document.getElementById("responseContainer").innerText = message;
+            }
+        }).catch(error => {
+            // Handle errors
+            console.error('Error:', error);
+        });
+    }
+</script>
+</body>
+</html>
