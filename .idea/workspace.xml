@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bacfa6b5-9681-45c3-a5f1-0c2d7b9c0b6c" name="Changes" comment="Sprint 3 - Nutrition">
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/mapper/NutritionMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/mapper/NutritionMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/service/NutritionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/service/NutritionService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/service/impl/NutritionServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/service/impl/NutritionServiceImpl.class" afterDir="false" />
-    </list>
+    <list default="true" id="bacfa6b5-9681-45c3-a5f1-0c2d7b9c0b6c" name="Changes" comment="update the delete account function" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -160,6 +154,7 @@
       <workItem from="1698871134651" duration="4200000" />
       <workItem from="1698949796062" duration="1785000" />
       <workItem from="1699300724825" duration="329000" />
+      <workItem from="1699467419838" duration="241000" />
     </task>
     <task id="LOCAL-00001" summary="skeleton">
       <created>1696302142980</created>
@@ -315,7 +310,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698950784116</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="update the delete account function">
+      <created>1699467644273</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1699467644273</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -340,7 +342,8 @@
     <MESSAGE value="Sprint2-body" />
     <MESSAGE value="Add gender" />
     <MESSAGE value="Sprint 3 - Nutrition" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sprint 3 - Nutrition" />
+    <MESSAGE value="update the delete account function" />
+    <option name="LAST_COMMIT_MESSAGE" value="update the delete account function" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
