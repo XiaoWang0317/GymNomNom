@@ -3,8 +3,10 @@ package com.gymnomnom.gymnomnom.controller;
 import com.gymnomnom.gymnomnom.anno.Track;
 import com.gymnomnom.gymnomnom.pojo.Diet;
 import com.gymnomnom.gymnomnom.pojo.Result;
+import com.gymnomnom.gymnomnom.service.AccountService;
 import com.gymnomnom.gymnomnom.service.NutritionService;
 import com.gymnomnom.gymnomnom.utils.JwtUtils;
+import com.gymnomnom.gymnomnom.utils.NutritionCalculator;
 import io.jsonwebtoken.Claims;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +28,10 @@ public class NutritionController {
     private HttpServletRequest request;
     @Autowired
     private NutritionService nutritionService;
+    @Autowired
+    private NutritionCalculator nutritionCalculator;
+    @Autowired
+    private AccountService accountService;
 
     /**
      * Input the diet of today
@@ -81,6 +87,34 @@ public class NutritionController {
             nut_map.get("carbs").add(diet.getCarbs());
         }
         return Result.success(nut_map);
+    }
+
+    @GetMapping("/recom")
+    @Track
+    public Result generateRecommendation() {
+        //id
+        String token = request.getHeader("token");
+        Claims claims = JwtUtils.parseJWT(token);
+        Integer id = (Integer) claims.get("id");
+        log.info("Get nutrition Recommendation for user: {}", id);
+
+
+//        double[] nut = new double[6];
+        int[] nut = new int[6];
+        Diet diet = nutritionService.getDeitToday(id);
+        nut[0] = (int)diet.getFat();
+        nut[1] = (int)diet.getVc();
+        nut[2] = (int)diet.getVa();
+        nut[3] = (int)diet.getCalories();
+        nut[4] = (int)diet.getProtein();
+        nut[5] = (int)diet.getCarbs();
+
+        int recom = nutritionCalculator.nutritions(nut,
+                                       diet.getAge(),
+                                       diet.getGender(),
+                                       accountService.getFitnessTypeById(diet.getId()));
+
+        return Result.success(recom);
     }
 
 }

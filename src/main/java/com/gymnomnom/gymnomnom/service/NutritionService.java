@@ -9,4 +9,6 @@ public interface NutritionService {
     void inputDiet(Diet diet);
 
     List<Diet> getNutHistory(Integer id);
+
+    Diet getDeitToday(Integer id);
 }

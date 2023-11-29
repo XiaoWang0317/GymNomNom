@@ -34,5 +34,8 @@ public interface AccountMapper {
      */
     @Select("select gender from user_table where id = #{id}")
     Integer getGenderById(Integer id);
+
+    @Select("select fitness_type from user_table where id = #{id}")
+    Integer getFitnessTypeById(Integer id);
 }
 

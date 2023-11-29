@@ -23,4 +23,7 @@ public interface NutritionMapper {
 
     @Delete("delete from diet_table where id = #{id}")
     void deleteAccount(Integer id);
+
+    @Select("select * from diet_table where date = #{date}")
+    Diet getTodayDiet(String date);
 }

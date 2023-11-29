@@ -35,7 +35,7 @@ public class AccountController {
      */
     @PostMapping("/signup")
     public Result signup(@RequestBody User user) {
-        log.info("Add a user to database");
+        log.info("Add a user to database {}", user);
         try {
             accountService.add(user);
         } catch (Exception e) {
@@ -86,12 +86,6 @@ public class AccountController {
         }
         //fail
         return Result.error("Cannot find the name or password");
-    }
-
-    @GetMapping("/about")
-    public String aboutPage() {
-        // Return the name of the Thymeleaf template or view for the "about" page
-        return "about"; // Assuming there is a Thymeleaf template named "about.html"
     }
 
 }

@@ -50,4 +50,10 @@ public class NutritionServiceImpl implements NutritionService {
     public List<Diet> getNutHistory(Integer id) {
         return nutritionMapper.getNutHistory(id);
     }
+
+    @Override
+    public Diet getDeitToday(Integer id) {
+        Diet diet = nutritionMapper.getTodayDiet(LocalDateTime.now().format(formatter));
+        return diet;
+    }
 }

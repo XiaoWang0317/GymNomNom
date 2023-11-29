@@ -55,4 +55,11 @@ public class AccountServiceImpl implements AccountService {
     public Integer getAgeById(Integer id) {
         return accountMapper.getAgeById(id);
     }
+
+    @Override
+    public Integer getFitnessTypeById(Integer id) {
+        return accountMapper.getFitnessTypeById(id);
+    }
+
+
 }

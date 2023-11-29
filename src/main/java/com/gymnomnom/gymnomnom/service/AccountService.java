@@ -11,4 +11,6 @@ public interface AccountService {
     User login(User user);
 
     Integer getAgeById(Integer id);
+
+    Integer getFitnessTypeById(Integer id);
 }
