@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 @Component
 public class NutritionCalculator {
-    public int nutritions(int[] nutrition, int age, int sex, int fitnessType){
+    public int nutritions(double[] nutrition, int age, int sex, int fitnessType){
         int[] recommendedTemp;
         // {fat, vc, va, calories, protein, carbs}
         if (age < 19){
@@ -105,12 +105,12 @@ public class NutritionCalculator {
     }
 
     public static void main (String[] args){
-        int[] i = {30, 85, 700, 1800, 46, 130};
+        double[] i = {30, 85, 700, 1800, 46, 130};
         NutritionCalculator calculator = new NutritionCalculator();
         int s = calculator.nutritions(i, 52, 0,1);
-        int[] i1 = {30, 85, 500, 2000, 96, 130};
+        double[] i1 = {30, 85, 500, 2000, 96, 130};
         int s1 = calculator.nutritions(i1, 34, 0,1);
-        int[] i2 = {60, 55, 700, 1800, 46, 130};
+        double[] i2 = {60, 55, 700, 1800, 46, 130};
         int s2 = calculator.nutritions(i2, 18, 0,1);
         System.out.println(s);
         System.out.println(s1);
