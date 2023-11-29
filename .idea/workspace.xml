@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bacfa6b5-9681-45c3-a5f1-0c2d7b9c0b6c" name="Changes" comment="front" />
+    <list default="true" id="bacfa6b5-9681-45c3-a5f1-0c2d7b9c0b6c" name="Changes" comment="front">
+      <changelist_data name="XiaoWang" email="xxw851@case.edu" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,6 +25,7 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="XiaoWang &lt;xxw851@case.edu&gt;" />
         <option value="mdennee &lt;144724388+mdennee@users.noreply.github.com&gt;" />
       </list>
     </option>
@@ -448,7 +451,21 @@
       <option name="project" value="LOCAL" />
       <updated>1701300665116</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="front">
+      <created>1701301377746</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1701301377746</updated>
+    </task>
+    <task id="LOCAL-00031" summary="front">
+      <created>1701301413211</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1701301413211</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
