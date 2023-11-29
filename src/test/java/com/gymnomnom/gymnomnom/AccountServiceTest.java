@@ -2,9 +2,7 @@ package com.gymnomnom.gymnomnom;
 
 import com.gymnomnom.gymnomnom.mapper.AccountMapper;
 import com.gymnomnom.gymnomnom.pojo.User;
-import com.gymnomnom.gymnomnom.service.AccountService;
 import com.gymnomnom.gymnomnom.service.impl.AccountServiceImpl;
-import org.apache.ibatis.annotations.Insert;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;

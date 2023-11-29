@@ -1,9 +1,7 @@
 package com.gymnomnom.gymnomnom;
 
-import com.gymnomnom.gymnomnom.mapper.BodyMapper;
 import com.gymnomnom.gymnomnom.mapper.NutritionMapper;
 import com.gymnomnom.gymnomnom.pojo.Diet;
-import com.gymnomnom.gymnomnom.service.impl.BodyServiceImpl;
 import com.gymnomnom.gymnomnom.service.impl.NutritionServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;

@@ -3,7 +3,6 @@ package com.gymnomnom.gymnomnom;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.gymnomnom.gymnomnom.controller.NutritionController;
 import com.gymnomnom.gymnomnom.mapper.NutritionMapper;
-import com.gymnomnom.gymnomnom.pojo.Body;
 import com.gymnomnom.gymnomnom.pojo.Diet;
 import com.gymnomnom.gymnomnom.service.NutritionService;
 import lombok.extern.slf4j.Slf4j;

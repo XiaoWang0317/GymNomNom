@@ -2,10 +2,7 @@ package com.gymnomnom.gymnomnom;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.gymnomnom.gymnomnom.controller.AccountController;
-import com.gymnomnom.gymnomnom.controller.BodyController;
-import com.gymnomnom.gymnomnom.controller.NutritionController;
 import com.gymnomnom.gymnomnom.mapper.LoginMapper;
-import com.gymnomnom.gymnomnom.pojo.Body;
 import com.gymnomnom.gymnomnom.pojo.User;
 import com.gymnomnom.gymnomnom.service.AccountService;
 import lombok.extern.slf4j.Slf4j;

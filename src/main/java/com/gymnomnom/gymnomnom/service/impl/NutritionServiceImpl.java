@@ -53,7 +53,6 @@ public class NutritionServiceImpl implements NutritionService {
 
     @Override
     public Diet getDeitToday(Integer id) {
-        Diet diet = nutritionMapper.getTodayDiet(LocalDateTime.now().format(formatter));
-        return diet;
+        return nutritionMapper.getTodayDiet(LocalDateTime.now().format(formatter));
     }
 }

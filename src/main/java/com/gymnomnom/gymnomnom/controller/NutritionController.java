@@ -99,15 +99,14 @@ public class NutritionController {
         log.info("Get nutrition Recommendation for user: {}", id);
 
 
-//        double[] nut = new double[6];
-        int[] nut = new int[6];
+        double[] nut = new double[6];
         Diet diet = nutritionService.getDeitToday(id);
-        nut[0] = (int)diet.getFat();
-        nut[1] = (int)diet.getVc();
-        nut[2] = (int)diet.getVa();
-        nut[3] = (int)diet.getCalories();
-        nut[4] = (int)diet.getProtein();
-        nut[5] = (int)diet.getCarbs();
+        nut[0] = diet.getFat();
+        nut[1] = diet.getVc();
+        nut[2] = diet.getVa();
+        nut[3] = diet.getCalories();
+        nut[4] = diet.getProtein();
+        nut[5] = diet.getCarbs();
 
         int recom = nutritionCalculator.nutritions(nut,
                                        diet.getAge(),

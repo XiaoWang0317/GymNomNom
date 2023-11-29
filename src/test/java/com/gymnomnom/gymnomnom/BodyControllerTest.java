@@ -20,14 +20,14 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WebMvcTest(BodyController.class)
 @Slf4j
 public class BodyControllerTest {
-    @Autowired
-    private BodyController bodyController;
-
-    @MockBean
-    private BodyService bodyService;
-
-    @MockBean
-    private BodyMapper bodyMapper;
+//    @Autowired
+//    private BodyController bodyController;
+//
+//    @MockBean
+//    private BodyService bodyService;
+//
+//    @MockBean
+//    private BodyMapper bodyMapper;
 
     @Autowired
     private MockMvc mockMvc;
