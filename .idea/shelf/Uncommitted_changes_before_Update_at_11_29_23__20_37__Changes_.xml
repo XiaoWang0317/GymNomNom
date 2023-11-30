@@ -1,0 +1,9 @@
+<changelist name="Uncommitted_changes_before_Update_at_11_29_23,_20_37_[Changes]" date="1701308250576" recycled="false" toDelete="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_29_23,_20_37_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 11/29/23, 20:37 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/gymnomnom/gymnomnom/service/impl/NutritionServiceImpl.class" />
+    <option name="AFTER_PATH" value="target/classes/com/gymnomnom/gymnomnom/service/impl/NutritionServiceImpl.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_29_23,_20_37_[Changes]/NutritionServiceImpl.class" />
+  </binary>
+</changelist>

@@ -1,0 +1,330 @@
+Index: src/test/java/com/gymnomnom/gymnomnom/BodyControllerTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.gymnomnom.gymnomnom;\n\nimport com.fasterxml.jackson.databind.ObjectMapper;\nimport com.gymnomnom.gymnomnom.controller.BodyController;\nimport com.gymnomnom.gymnomnom.mapper.BodyMapper;\nimport com.gymnomnom.gymnomnom.pojo.Body;\nimport com.gymnomnom.gymnomnom.service.BodyService;\nimport lombok.extern.slf4j.Slf4j;\nimport org.junit.jupiter.api.Test;\nimport org.springframework.beans.factory.annotation.Autowired;\nimport org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;\nimport org.springframework.boot.test.mock.mockito.MockBean;\nimport org.springframework.http.MediaType;\nimport org.springframework.test.web.servlet.MockMvc;\nimport org.springframework.test.web.servlet.request.MockMvcRequestBuilders;\nimport org.springframework.test.web.servlet.result.MockMvcResultMatchers;\n\nimport static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;\n\n@WebMvcTest(BodyController.class)\n@Slf4j\npublic class BodyControllerTest {\n    @Autowired\n    private BodyController bodyController;\n\n    @MockBean\n    private BodyService bodyService;\n\n    @MockBean\n    private BodyMapper bodyMapper;\n\n    @Autowired\n    private MockMvc mockMvc;\n    String jwt = \"eyJhbGciOiJIUzI1NiJ9.eyJwYXNzd29yZCI6IjEyMzQ1IiwibmFtZSI6IlhpYW8gV2FuZyIsImlkIjoyLCJleHAiOjE3MDAwNDEyMzJ9.uLJD3tCIh0QRb046kHjCpqu9-7_FkinkdsaRp909llc\";\n\n    @Test\n    public void testInputBody() throws Exception {\n        Body body = new Body();\n        body.setHeight(1.1);\n        body.setWeight(1.2);\n        ObjectMapper objectMapper = new ObjectMapper();\n\n        mockMvc.perform(MockMvcRequestBuilders.post(\"/inputbody\")\n                        .contentType(\"application/json\")\n                        .content(objectMapper.writeValueAsString(body))\n                        .accept(MediaType.APPLICATION_JSON)\n                        .header(\"token\", jwt))\n                .andExpect(MockMvcResultMatchers.status().isOk())\n                .andExpect(jsonPath(\"$.msg\").value(\"success\"));\n    }\n\n    @Test\n    public void testBodyHistory() throws Exception {\n        mockMvc.perform(MockMvcRequestBuilders.get(\"/history\")\n                        .header(\"token\", jwt))\n                .andExpect(MockMvcResultMatchers.status().isOk())\n                .andExpect(jsonPath(\"$.msg\").value(\"success\"));\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/com/gymnomnom/gymnomnom/BodyControllerTest.java b/src/test/java/com/gymnomnom/gymnomnom/BodyControllerTest.java
+--- a/src/test/java/com/gymnomnom/gymnomnom/BodyControllerTest.java	(revision c2e97485d2e0d0a30d5d4514bb1975c8f57ad19c)
++++ b/src/test/java/com/gymnomnom/gymnomnom/BodyControllerTest.java	(date 1701300081345)
+@@ -20,14 +20,14 @@
+ @WebMvcTest(BodyController.class)
+ @Slf4j
+ public class BodyControllerTest {
+-    @Autowired
+-    private BodyController bodyController;
+-
+-    @MockBean
+-    private BodyService bodyService;
+-
+-    @MockBean
+-    private BodyMapper bodyMapper;
++//    @Autowired
++//    private BodyController bodyController;
++//
++//    @MockBean
++//    private BodyService bodyService;
++//
++//    @MockBean
++//    private BodyMapper bodyMapper;
+ 
+     @Autowired
+     private MockMvc mockMvc;
+Index: src/test/java/com/gymnomnom/gymnomnom/NutritionContollerTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.gymnomnom.gymnomnom;\n\nimport com.fasterxml.jackson.databind.ObjectMapper;\nimport com.gymnomnom.gymnomnom.controller.NutritionController;\nimport com.gymnomnom.gymnomnom.mapper.NutritionMapper;\nimport com.gymnomnom.gymnomnom.pojo.Body;\nimport com.gymnomnom.gymnomnom.pojo.Diet;\nimport com.gymnomnom.gymnomnom.service.NutritionService;\nimport lombok.extern.slf4j.Slf4j;\nimport org.junit.jupiter.api.Test;\nimport org.springframework.beans.factory.annotation.Autowired;\nimport org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;\nimport org.springframework.boot.test.mock.mockito.MockBean;\nimport org.springframework.http.MediaType;\nimport org.springframework.test.web.servlet.MockMvc;\nimport org.springframework.test.web.servlet.request.MockMvcRequestBuilders;\nimport org.springframework.test.web.servlet.result.MockMvcResultMatchers;\n\nimport static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;\n\n@Slf4j\n@WebMvcTest(NutritionController.class)\npublic class NutritionContollerTest {\n    @Autowired\n    private NutritionController nutritionController;\n\n    @Autowired\n    private MockMvc mockMvc;\n\n    @MockBean\n    private NutritionService nutritionService;\n\n    @MockBean\n    private NutritionMapper nutritionMapper;\n\n    String jwt = \"eyJhbGciOiJIUzI1NiJ9.eyJwYXNzd29yZCI6IjEyMzQ1IiwibmFtZSI6IlhpYW8gV2FuZyIsImlkIjoyLCJleHAiOjE3MDAwNDEyMzJ9.uLJD3tCIh0QRb046kHjCpqu9-7_FkinkdsaRp909llc\";\n\n    @Test\n    public void testInputNut() throws Exception {\n        Diet diet = new Diet();\n        diet.setCarbs(0.1);\n        diet.setCalories(0.2);\n        diet.setFat(0.3);\n        diet.setProtein(0.4);\n        diet.setVa(0.5);\n        diet.setVc(0.6);\n        ObjectMapper objectMapper = new ObjectMapper();\n\n        mockMvc.perform(MockMvcRequestBuilders.post(\"/inputnut\")\n                        .contentType(\"application/json\")\n                        .content(objectMapper.writeValueAsString(diet))\n                        .accept(MediaType.APPLICATION_JSON)\n                        .header(\"token\", jwt))\n                .andExpect(MockMvcResultMatchers.status().isOk())\n                .andExpect(jsonPath(\"$.msg\").value(\"success\"));\n    }\n\n    @Test\n    public void testNutHistory() throws Exception {\n        mockMvc.perform(MockMvcRequestBuilders.get(\"/historynut\")\n                        .header(\"token\", jwt))\n                .andExpect(MockMvcResultMatchers.status().isOk())\n                .andExpect(jsonPath(\"$.msg\").value(\"success\"));\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/com/gymnomnom/gymnomnom/NutritionContollerTest.java b/src/test/java/com/gymnomnom/gymnomnom/NutritionContollerTest.java
+--- a/src/test/java/com/gymnomnom/gymnomnom/NutritionContollerTest.java	(revision c2e97485d2e0d0a30d5d4514bb1975c8f57ad19c)
++++ b/src/test/java/com/gymnomnom/gymnomnom/NutritionContollerTest.java	(date 1701299977121)
+@@ -3,7 +3,6 @@
+ import com.fasterxml.jackson.databind.ObjectMapper;
+ import com.gymnomnom.gymnomnom.controller.NutritionController;
+ import com.gymnomnom.gymnomnom.mapper.NutritionMapper;
+-import com.gymnomnom.gymnomnom.pojo.Body;
+ import com.gymnomnom.gymnomnom.pojo.Diet;
+ import com.gymnomnom.gymnomnom.service.NutritionService;
+ import lombok.extern.slf4j.Slf4j;
+Index: src/main/java/com/gymnomnom/gymnomnom/service/impl/NutritionServiceImpl.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.gymnomnom.gymnomnom.service.impl;\n\nimport com.gymnomnom.gymnomnom.mapper.AccountMapper;\nimport com.gymnomnom.gymnomnom.mapper.NutritionMapper;\nimport com.gymnomnom.gymnomnom.pojo.Diet;\nimport com.gymnomnom.gymnomnom.pojo.generalException;\nimport com.gymnomnom.gymnomnom.service.NutritionService;\nimport org.springframework.beans.factory.annotation.Autowired;\nimport org.springframework.stereotype.Service;\n\nimport java.time.LocalDateTime;\nimport java.time.format.DateTimeFormatter;\nimport java.util.List;\n\n@Service\npublic class NutritionServiceImpl implements NutritionService {\n\n    @Autowired\n    private AccountMapper accountMapper;\n    @Autowired\n    private NutritionMapper nutritionMapper;\n    DateTimeFormatter formatter = DateTimeFormatter.ofPattern(\"yyyy-MM-dd\");\n\n    /**\n     * Input the diet\n     * @param diet with id\n     */\n    @Override\n    public void inputDiet(Diet diet) {\n        //counter cases handling\n        if (diet.getCalories() < 0 ||\n                diet.getFat() < 0 ||\n                diet.getCarbs() < 0 ||\n                diet.getVc() < 0 ||\n                diet.getVa() < 0 ||\n                diet.getProtein() < 0) {\n            throw new generalException(\"PLease input valid nutrition value\");\n        }\n\n        //set values base on user information\n        diet.setAge(accountMapper.getAgeById(diet.getId()));\n        diet.setGender(accountMapper.getGenderById(diet.getId()));\n        diet.setDate(LocalDateTime.now().format(formatter));\n\n        //add\n        nutritionMapper.inputDiet(diet);\n    }\n\n    @Override\n    public List<Diet> getNutHistory(Integer id) {\n        return nutritionMapper.getNutHistory(id);\n    }\n\n    @Override\n    public Diet getDeitToday(Integer id) {\n        Diet diet = nutritionMapper.getTodayDiet(LocalDateTime.now().format(formatter));\n        return diet;\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/gymnomnom/gymnomnom/service/impl/NutritionServiceImpl.java b/src/main/java/com/gymnomnom/gymnomnom/service/impl/NutritionServiceImpl.java
+--- a/src/main/java/com/gymnomnom/gymnomnom/service/impl/NutritionServiceImpl.java	(revision c2e97485d2e0d0a30d5d4514bb1975c8f57ad19c)
++++ b/src/main/java/com/gymnomnom/gymnomnom/service/impl/NutritionServiceImpl.java	(date 1701300081339)
+@@ -53,7 +53,6 @@
+ 
+     @Override
+     public Diet getDeitToday(Integer id) {
+-        Diet diet = nutritionMapper.getTodayDiet(LocalDateTime.now().format(formatter));
+-        return diet;
++        return nutritionMapper.getTodayDiet(LocalDateTime.now().format(formatter));
+     }
+ }
+Index: src/test/java/com/gymnomnom/gymnomnom/AccountControllerTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.gymnomnom.gymnomnom;\n\nimport com.fasterxml.jackson.databind.ObjectMapper;\nimport com.gymnomnom.gymnomnom.controller.AccountController;\nimport com.gymnomnom.gymnomnom.controller.BodyController;\nimport com.gymnomnom.gymnomnom.controller.NutritionController;\nimport com.gymnomnom.gymnomnom.mapper.LoginMapper;\nimport com.gymnomnom.gymnomnom.pojo.Body;\nimport com.gymnomnom.gymnomnom.pojo.User;\nimport com.gymnomnom.gymnomnom.service.AccountService;\nimport lombok.extern.slf4j.Slf4j;\nimport org.junit.jupiter.api.Test;\nimport org.springframework.beans.factory.annotation.Autowired;\nimport org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;\nimport org.springframework.boot.test.mock.mockito.MockBean;\nimport org.springframework.http.MediaType;\nimport org.springframework.test.web.servlet.MockMvc;\nimport org.springframework.test.web.servlet.request.MockMvcRequestBuilders;\nimport org.springframework.test.web.servlet.result.MockMvcResultMatchers;\n\nimport static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;\n\n\n@WebMvcTest(AccountController.class)\n@Slf4j\nclass AccountControllerTest {\n    @Autowired\n    private AccountController accountController;\n    @MockBean\n    private AccountService accountService;\n    @MockBean\n    private LoginMapper loginMapper;\n    @Autowired\n    private MockMvc mockMvc;\n\n    String jwt = \"eyJhbGciOiJIUzI1NiJ9.eyJwYXNzd29yZCI6IjEyMzQ1IiwibmFtZSI6IlhpYW8gV2FuZyIsImlkIjoyLCJleHAiOjE3MDAwNDEyMzJ9.uLJD3tCIh0QRb046kHjCpqu9-7_FkinkdsaRp909llc\";\n    @Test\n    public void testLogin() throws Exception {\n        User user = new User();\n        user.setName(\"Xiao Wang\");\n        user.setPassword(\"12345\");\n        ObjectMapper objectMapper = new ObjectMapper();\n\n        mockMvc.perform(MockMvcRequestBuilders.post(\"/login\")\n                        .contentType(\"application/json\")\n                        .content(objectMapper.writeValueAsString(user))\n                        .accept(MediaType.APPLICATION_JSON))\n                .andExpect(MockMvcResultMatchers.status().isOk());\n//                .andExpect(jsonPath(\"$.msg\").value(\"success\"));\n\n    }\n\n    @Test\n    public void testSignup() throws Exception {\n        User user = new User();\n        user.setName(\"John Wick\");\n        user.setPassword(\"abcd\");\n        user.setAge(30);\n        user.setGender(1);\n        user.setFitness_type(1);\n        ObjectMapper objectMapper = new ObjectMapper();\n\n        mockMvc.perform(MockMvcRequestBuilders.post(\"/signup\")\n                        .contentType(\"application/json\")\n                        .content(objectMapper.writeValueAsString(user))\n                        .accept(MediaType.APPLICATION_JSON))\n                .andExpect(MockMvcResultMatchers.status().isOk())\n                .andExpect(jsonPath(\"$.msg\").value(\"success\"));\n    }\n\n    @Test\n    public void testDelete() throws Exception {\n        mockMvc.perform(MockMvcRequestBuilders.delete(\"/delete\")\n                        .header(\"token\", jwt))\n                .andExpect(MockMvcResultMatchers.status().isOk())\n                .andExpect(jsonPath(\"$.msg\").value(\"success\"));\n    }\n\n\n\n}\n\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/com/gymnomnom/gymnomnom/AccountControllerTest.java b/src/test/java/com/gymnomnom/gymnomnom/AccountControllerTest.java
+--- a/src/test/java/com/gymnomnom/gymnomnom/AccountControllerTest.java	(revision c2e97485d2e0d0a30d5d4514bb1975c8f57ad19c)
++++ b/src/test/java/com/gymnomnom/gymnomnom/AccountControllerTest.java	(date 1701299977130)
+@@ -2,10 +2,7 @@
+ 
+ import com.fasterxml.jackson.databind.ObjectMapper;
+ import com.gymnomnom.gymnomnom.controller.AccountController;
+-import com.gymnomnom.gymnomnom.controller.BodyController;
+-import com.gymnomnom.gymnomnom.controller.NutritionController;
+ import com.gymnomnom.gymnomnom.mapper.LoginMapper;
+-import com.gymnomnom.gymnomnom.pojo.Body;
+ import com.gymnomnom.gymnomnom.pojo.User;
+ import com.gymnomnom.gymnomnom.service.AccountService;
+ import lombok.extern.slf4j.Slf4j;
+Index: src/test/java/com/gymnomnom/gymnomnom/NutritionServiceTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.gymnomnom.gymnomnom;\n\nimport com.gymnomnom.gymnomnom.mapper.BodyMapper;\nimport com.gymnomnom.gymnomnom.mapper.NutritionMapper;\nimport com.gymnomnom.gymnomnom.pojo.Diet;\nimport com.gymnomnom.gymnomnom.service.impl.BodyServiceImpl;\nimport com.gymnomnom.gymnomnom.service.impl.NutritionServiceImpl;\nimport org.junit.jupiter.api.Test;\nimport org.mockito.InjectMocks;\nimport org.mockito.Mock;\nimport org.mockito.Mockito;\nimport org.springframework.boot.test.context.SpringBootTest;\n\nimport java.util.ArrayList;\nimport java.util.List;\n\nimport static org.assertj.core.api.AssertionsForClassTypes.assertThat;\n\n@SpringBootTest\npublic class NutritionServiceTest {\n    @Mock\n    private NutritionMapper nutritionMapper;\n\n    @InjectMocks\n    private NutritionServiceImpl nutritionService;\n\n    @Test\n    public void GetHeightArrayTest() {\n        Integer id = 2;\n        List<Diet> mock_nut_list = new ArrayList<>();\n        Mockito.when(nutritionMapper.getNutHistory(id)).thenReturn(mock_nut_list);\n        List<Diet> result = nutritionService.getNutHistory(id);\n        Mockito.verify(nutritionMapper).getNutHistory(id);\n        assertThat(result).isEqualTo(mock_nut_list);\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/com/gymnomnom/gymnomnom/NutritionServiceTest.java b/src/test/java/com/gymnomnom/gymnomnom/NutritionServiceTest.java
+--- a/src/test/java/com/gymnomnom/gymnomnom/NutritionServiceTest.java	(revision c2e97485d2e0d0a30d5d4514bb1975c8f57ad19c)
++++ b/src/test/java/com/gymnomnom/gymnomnom/NutritionServiceTest.java	(date 1701299977128)
+@@ -1,9 +1,7 @@
+ package com.gymnomnom.gymnomnom;
+ 
+-import com.gymnomnom.gymnomnom.mapper.BodyMapper;
+ import com.gymnomnom.gymnomnom.mapper.NutritionMapper;
+ import com.gymnomnom.gymnomnom.pojo.Diet;
+-import com.gymnomnom.gymnomnom.service.impl.BodyServiceImpl;
+ import com.gymnomnom.gymnomnom.service.impl.NutritionServiceImpl;
+ import org.junit.jupiter.api.Test;
+ import org.mockito.InjectMocks;
+Index: src/test/java/com/gymnomnom/gymnomnom/AccountServiceTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.gymnomnom.gymnomnom;\n\nimport com.gymnomnom.gymnomnom.mapper.AccountMapper;\nimport com.gymnomnom.gymnomnom.pojo.User;\nimport com.gymnomnom.gymnomnom.service.AccountService;\nimport com.gymnomnom.gymnomnom.service.impl.AccountServiceImpl;\nimport org.apache.ibatis.annotations.Insert;\nimport org.junit.jupiter.api.Test;\nimport org.mockito.InjectMocks;\nimport org.mockito.Mock;\nimport org.mockito.Mockito;\nimport org.springframework.boot.test.context.SpringBootTest;\n\nimport static org.assertj.core.api.AssertionsForClassTypes.assertThat;\n\n@SpringBootTest\npublic class AccountServiceTest {\n\n    @Mock\n    private AccountMapper accountMapper;\n\n    @InjectMocks\n    private AccountServiceImpl accountService;\n\n    @Test\n    public void LoginTest() {\n        User Xiao = new User();\n        Xiao.setName(\"Xiao Wang\");\n        Xiao.setPassword(\"12345\");\n        User mockUser = new User();\n        Mockito.when(accountMapper.getByNameAndPw(Xiao)).thenReturn(mockUser);\n        User result = accountService.login(Xiao);\n        Mockito.verify(accountMapper).getByNameAndPw(Xiao);\n        assertThat(result).isEqualTo(mockUser);\n    }\n\n    @Test\n    public void GetAgeByIdTest() {\n        Integer id = 2;\n        Integer mockAge = -1;\n        Mockito.when(accountMapper.getAgeById(id)).thenReturn(mockAge);\n        Integer result_age = accountService.getAgeById(id);\n        Mockito.verify(accountMapper).getAgeById(id);\n        assertThat(result_age).isEqualTo(mockAge);\n    }\n\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/com/gymnomnom/gymnomnom/AccountServiceTest.java b/src/test/java/com/gymnomnom/gymnomnom/AccountServiceTest.java
+--- a/src/test/java/com/gymnomnom/gymnomnom/AccountServiceTest.java	(revision c2e97485d2e0d0a30d5d4514bb1975c8f57ad19c)
++++ b/src/test/java/com/gymnomnom/gymnomnom/AccountServiceTest.java	(date 1701299977125)
+@@ -2,9 +2,7 @@
+ 
+ import com.gymnomnom.gymnomnom.mapper.AccountMapper;
+ import com.gymnomnom.gymnomnom.pojo.User;
+-import com.gymnomnom.gymnomnom.service.AccountService;
+ import com.gymnomnom.gymnomnom.service.impl.AccountServiceImpl;
+-import org.apache.ibatis.annotations.Insert;
+ import org.junit.jupiter.api.Test;
+ import org.mockito.InjectMocks;
+ import org.mockito.Mock;
+Index: src/main/java/com/gymnomnom/gymnomnom/controller/NutritionController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.gymnomnom.gymnomnom.controller;\n\nimport com.gymnomnom.gymnomnom.anno.Track;\nimport com.gymnomnom.gymnomnom.pojo.Diet;\nimport com.gymnomnom.gymnomnom.pojo.Result;\nimport com.gymnomnom.gymnomnom.service.AccountService;\nimport com.gymnomnom.gymnomnom.service.NutritionService;\nimport com.gymnomnom.gymnomnom.utils.JwtUtils;\nimport com.gymnomnom.gymnomnom.utils.NutritionCalculator;\nimport io.jsonwebtoken.Claims;\nimport lombok.extern.slf4j.Slf4j;\nimport org.springframework.beans.factory.annotation.Autowired;\nimport org.springframework.web.bind.annotation.GetMapping;\nimport org.springframework.web.bind.annotation.PostMapping;\nimport org.springframework.web.bind.annotation.RequestBody;\nimport org.springframework.web.bind.annotation.RestController;\n\nimport javax.servlet.http.HttpServletRequest;\nimport java.util.ArrayList;\nimport java.util.HashMap;\nimport java.util.List;\nimport java.util.Map;\n\n@RestController\n@Slf4j\npublic class NutritionController {\n    @Autowired\n    private HttpServletRequest request;\n    @Autowired\n    private NutritionService nutritionService;\n    @Autowired\n    private NutritionCalculator nutritionCalculator;\n    @Autowired\n    private AccountService accountService;\n\n    /**\n     * Input the diet of today\n     * @param diet with different nutrition in JSON\n     * @return Result\n     */\n    @PostMapping(\"/inputnut\")\n    @Track\n    public Result inputDiet(@RequestBody Diet diet) {\n        //id\n        String token = request.getHeader(\"token\");\n        Claims claims = JwtUtils.parseJWT(token);\n        Integer id = (Integer) claims.get(\"id\");\n        log.info(\"Input body data for user: {}\", id);\n        diet.setId(id);\n\n        log.info(\"Protein: {}\", diet.getProtein());\n\n        //add\n        try{\n            nutritionService.inputDiet(diet);\n        } catch (Exception e) {\n            log.info(\"Exception=========================\");\n            return Result.error(e.getMessage());\n        }\n        return Result.success();\n    }\n\n    @GetMapping(\"/historynut\")\n    @Track\n    public Result getNutritionHistory() {\n        //id\n        String token = request.getHeader(\"token\");\n        Claims claims = JwtUtils.parseJWT(token);\n        Integer id = (Integer) claims.get(\"id\");\n        log.info(\"Get nutrition data for user: {}\", id);\n\n        List<Diet> diet_list = nutritionService.getNutHistory(id);\n        Map<String, List<Double>> nut_map = new HashMap<>();\n        nut_map.put(\"fat\", new ArrayList<>());\n        nut_map.put(\"vc\", new ArrayList<>());\n        nut_map.put(\"va\", new ArrayList<>());\n        nut_map.put(\"calories\", new ArrayList<>());\n        nut_map.put(\"protein\", new ArrayList<>());\n        nut_map.put(\"carbs\", new ArrayList<>());\n\n        for (Diet diet : diet_list) {\n            nut_map.get(\"fat\").add(diet.getFat());\n            nut_map.get(\"vc\").add(diet.getVc());\n            nut_map.get(\"va\").add(diet.getVa());\n            nut_map.get(\"calories\").add(diet.getCalories());\n            nut_map.get(\"protein\").add(diet.getProtein());\n            nut_map.get(\"carbs\").add(diet.getCarbs());\n        }\n        return Result.success(nut_map);\n    }\n\n    @GetMapping(\"/recom\")\n    @Track\n    public Result generateRecommendation() {\n        //id\n        String token = request.getHeader(\"token\");\n        Claims claims = JwtUtils.parseJWT(token);\n        Integer id = (Integer) claims.get(\"id\");\n        log.info(\"Get nutrition Recommendation for user: {}\", id);\n\n\n//        double[] nut = new double[6];\n        int[] nut = new int[6];\n        Diet diet = nutritionService.getDeitToday(id);\n        nut[0] = (int)diet.getFat();\n        nut[1] = (int)diet.getVc();\n        nut[2] = (int)diet.getVa();\n        nut[3] = (int)diet.getCalories();\n        nut[4] = (int)diet.getProtein();\n        nut[5] = (int)diet.getCarbs();\n\n        int recom = nutritionCalculator.nutritions(nut,\n                                       diet.getAge(),\n                                       diet.getGender(),\n                                       accountService.getFitnessTypeById(diet.getId()));\n\n        return Result.success(recom);\n    }\n\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/gymnomnom/gymnomnom/controller/NutritionController.java b/src/main/java/com/gymnomnom/gymnomnom/controller/NutritionController.java
+--- a/src/main/java/com/gymnomnom/gymnomnom/controller/NutritionController.java	(revision c2e97485d2e0d0a30d5d4514bb1975c8f57ad19c)
++++ b/src/main/java/com/gymnomnom/gymnomnom/controller/NutritionController.java	(date 1701299777452)
+@@ -99,15 +99,14 @@
+         log.info("Get nutrition Recommendation for user: {}", id);
+ 
+ 
+-//        double[] nut = new double[6];
+-        int[] nut = new int[6];
++        double[] nut = new double[6];
+         Diet diet = nutritionService.getDeitToday(id);
+-        nut[0] = (int)diet.getFat();
+-        nut[1] = (int)diet.getVc();
+-        nut[2] = (int)diet.getVa();
+-        nut[3] = (int)diet.getCalories();
+-        nut[4] = (int)diet.getProtein();
+-        nut[5] = (int)diet.getCarbs();
++        nut[0] = diet.getFat();
++        nut[1] = diet.getVc();
++        nut[2] = diet.getVa();
++        nut[3] = diet.getCalories();
++        nut[4] = diet.getProtein();
++        nut[5] = diet.getCarbs();
+ 
+         int recom = nutritionCalculator.nutritions(nut,
+                                        diet.getAge(),
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision c2e97485d2e0d0a30d5d4514bb1975c8f57ad19c)
++++ b/.idea/workspace.xml	(date 1701299853798)
+@@ -4,7 +4,7 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="bacfa6b5-9681-45c3-a5f1-0c2d7b9c0b6c" name="Changes" comment="change to double NutritionCalculator.java">
++    <list default="true" id="bacfa6b5-9681-45c3-a5f1-0c2d7b9c0b6c" name="Changes" comment="front">
+       <change afterPath="$PROJECT_DIR$/src/main/resources/static/demo1 2/.idea/.gitignore" afterDir="false" />
+       <change afterPath="$PROJECT_DIR$/src/main/resources/static/demo1 2/.idea/demo1 2.iml" afterDir="false" />
+       <change afterPath="$PROJECT_DIR$/src/main/resources/static/demo1 2/.idea/misc.xml" afterDir="false" />
+@@ -5223,22 +5223,43 @@
+       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/about.html" beforeDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/test/java/com/gymnomnom/gymnomnom/GymNomNomApplicationTests.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/GymNomNom-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/GymNomNom-0.0.1-SNAPSHOT.jar" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/GymNomNom-0.0.1-SNAPSHOT.jar.original" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/controller/AccountController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/controller/AccountController.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/controller/NutritionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/controller/NutritionController.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/filter/LoginFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/filter/LoginFilter.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/mapper/AccountMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/mapper/AccountMapper.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/mapper/NutritionMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/mapper/NutritionMapper.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/service/NutritionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/service/NutritionService.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/service/impl/AccountServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/service/impl/AccountServiceImpl.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/service/impl/NutritionServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/service/impl/NutritionServiceImpl.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.gymnomnom.gymnomnom.GymnomnomApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.gymnomnom.gymnomnom.GymnomnomApplicationTests.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.gymnomnom.gymnomnom.GymnomnomApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.gymnomnom.gymnomnom.GymnomnomApplicationTests.txt" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/gymnomnom/gymnomnom/GymnomnomApplicationTests.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/GymNomNom-0.0.1-SNAPSHOT.jar" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/GymnomnomApplication.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/anno/Track.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/aop/LogAspect.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/controller/AccountController.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/controller/BodyController.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/controller/HelloController.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/controller/NutritionController.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/filter/LoginFilter.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/mapper/AccountMapper.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/mapper/BodyMapper.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/mapper/LoginMapper.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/mapper/NutritionMapper.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/mapper/TrackMapper.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/pojo/Body.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/pojo/Diet.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/pojo/LoginLog.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/pojo/OperateLog.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/pojo/Result.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/pojo/User.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/pojo/generalException.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/service/AccountService.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/service/BodyService.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/service/NutritionService.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/service/impl/AccountServiceImpl.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/service/impl/BodyServiceImpl.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/service/impl/NutritionServiceImpl.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/utils/BMICalculator.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/gymnomnom/gymnomnom/utils/JwtUtils.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.gymnomnom.gymnomnom.GymnomnomApplicationTests.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.gymnomnom.gymnomnom.GymnomnomApplicationTests.txt" beforeDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -5302,39 +5323,39 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "ASKED_ADD_EXTERNAL_FILES": "true",
+-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+-    "DefaultHtmlFileTemplate": "HTML File",
+-    "RequestMappingsPanelOrder0": "0",
+-    "RequestMappingsPanelOrder1": "1",
+-    "RequestMappingsPanelWidth0": "75",
+-    "RequestMappingsPanelWidth1": "75",
+-    "RunOnceActivity.OpenProjectViewOnStart": "true",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+-    "WebServerToolWindowFactoryState": "false",
+-    "deletionFromPopupRequiresConfirmation": "false",
+-    "last_opened_file_path": "/Users/mogamimorimodo/Desktop/GymNomNom/src/main/java/com/gymnomnom/gymnomnom/pojo",
+-    "node.js.detected.package.eslint": "true",
+-    "node.js.detected.package.tslint": "true",
+-    "node.js.selected.package.eslint": "(autodetect)",
+-    "node.js.selected.package.tslint": "(autodetect)",
+-    "nodejs_package_manager_path": "npm",
+-    "project.structure.last.edited": "Modules",
+-    "project.structure.proportion": "0.0",
+-    "project.structure.side.proportion": "0.0",
+-    "settings.editor.selected.configurable": "preferences.pluginManager",
+-    "spring.configuration.checksum": "50fe1b9315ee23d567fb25276bb6e45e",
+-    "vue.rearranger.settings.migration": "true"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
++    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
++    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
++    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
++    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
++    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
++    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
++    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
++    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
++    &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
++    &quot;last_opened_file_path&quot;: &quot;/Users/mogamimorimodo/Desktop/GymNomNom/src/main/java/com/gymnomnom/gymnomnom/pojo&quot;,
++    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
++    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
++    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
++    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
++    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
++    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
++    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
++    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
++    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
++    &quot;spring.configuration.checksum&quot;: &quot;50fe1b9315ee23d567fb25276bb6e45e&quot;,
++    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+   },
+-  "keyToStringList": {
+-    "DatabaseDriversLRU": [
+-      "mysql"
++  &quot;keyToStringList&quot;: {
++    &quot;DatabaseDriversLRU&quot;: [
++      &quot;mysql&quot;
+     ]
+   }
+-}]]></component>
++}</component>
+   <component name="RecentsManager">
+     <key name="CopyFile.RECENT_KEYS">
+       <recent name="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/pojo" />
+@@ -5347,7 +5368,7 @@
+       <recent name="$PROJECT_DIR$/src/main/java/com/gymnomnom/gymnomnom/pojo" />
+     </key>
+   </component>
+-  <component name="RunManager" selected="Application.NutritionCalculator">
++  <component name="RunManager" selected="Spring Boot.GymnomnomApplication">
+     <configuration name="NutritionCalculator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+       <option name="MAIN_CLASS_NAME" value="com.gymnomnom.gymnomnom.utils.NutritionCalculator" />
+       <module name="GymNomNom" />
+@@ -5683,7 +5704,8 @@
+     <MESSAGE value="update the delete account function" />
+     <MESSAGE value="，" />
+     <MESSAGE value="change to double NutritionCalculator.java" />
+-    <option name="LAST_COMMIT_MESSAGE" value="change to double NutritionCalculator.java" />
++    <MESSAGE value="front" />
++    <option name="LAST_COMMIT_MESSAGE" value="front" />
+   </component>
+   <component name="XDebuggerManager">
+     <breakpoint-manager>
