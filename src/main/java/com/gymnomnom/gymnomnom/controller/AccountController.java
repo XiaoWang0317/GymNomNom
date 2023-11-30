@@ -82,6 +82,7 @@ public class AccountController {
             map.put("JWT", jwt);
             LoginLog login = new LoginLog(LocalDateTime.now(), u.getName(), u.getPassword(), u.getId());
             loginMapper.insert(login);
+            log.info("JWT sent=========================================>");
             return Result.success(map);
         }
         //fail
