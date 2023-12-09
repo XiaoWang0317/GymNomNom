@@ -16,11 +16,6 @@ Nginx download: https://nginx.org/en/download.html
 
 There is URL re-writing implemented in the nginx.conf to make sure the URL request sent by frontend will be directed from localhost:91 to localhost:8080. Only URLs starts with /api will be rewritten. 
 
-## Inspected Bugs
-1. The backend exception handling on the frontend is not working perfectly
-2. For the food recommendation, if users input extreme values for as their nutrition intake, the result maybe less effective
-3. Users cannot change their username, password or fitness type.
-
 ## Website User Manual
 
 This manual provides detailed instructions on how to use our website effectively. 
