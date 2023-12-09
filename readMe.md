@@ -3,7 +3,7 @@
 ## Code structure
 ### main: Java backend with SpringBoot
 ### test: Testing classes by SpringBoot Test
-### www: Frontend code with HTML, CSS and JavaScript
+### frontend: Frontend code with HTML, CSS and JavaScript based on node.js and axios
 ### nginx.conf: Nginx configuration file
 ### pom.xml: SpringBoot configuration file
 
